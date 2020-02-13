@@ -34,10 +34,10 @@
 #           url: "/rides?limit=1&skip=1"
 
 config:
-    target: 'https://apiecinterportdev.azure-api.net'
+    target: 'http://20.43.177.76'
     phases:
-        - duration: 30
-          arrivalRate: 20
+        - duration: 10
+          arrivalRate: 500
     ensure:
         p99: 50
     defaults:

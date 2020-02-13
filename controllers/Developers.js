@@ -2,6 +2,7 @@
 
 var utils = require('../utils/writer.js');
 var Developers = require('../service/DevelopersService');
+var logger = require('../utils/azurelogger.js');
 
 module.exports.searchInventory = function searchInventory (req, res, next) {
   var searchString = req.swagger.params['searchString'].value;
@@ -14,4 +15,5 @@ module.exports.searchInventory = function searchInventory (req, res, next) {
     .catch(function (response) {
       utils.writeJson(res, response);
     });
+  logger.azureLogger(res);
 };

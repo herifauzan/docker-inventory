@@ -16,6 +16,7 @@
   "dependencies": {
     "artillery": "^1.6.0-29",
     "connect": "^3.2.0",
+    "crypto": "^1.0.1",
     "js-yaml": "^3.3.0",
     "swagger-tools": "^0.10.4"
   }

@@ -1,0 +1,33 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  annotations:
+    autoscaling.alpha.kubernetes.io/conditions: '[{"type":"AbleToScale","status":"True","lastTransitionTime":"2020-02-10T05:42:58Z","reason":"ReadyForNewScale","message":"recommended
+      size matches current size"},{"type":"ScalingActive","status":"True","lastTransitionTime":"2020-02-10T06:24:14Z","reason":"ValidMetricFound","message":"the
+      HPA was able to successfully calculate a replica count from cpu resource utilization
+      (percentage of request)"},{"type":"ScalingLimited","status":"True","lastTransitionTime":"2020-02-10T06:24:14Z","reason":"TooFewReplicas","message":"the
+      desired replica count is increasing faster than the maximum scale rate"}]'
+    autoscaling.alpha.kubernetes.io/current-metrics: '[{"type":"Resource","resource":{"name":"cpu","currentAverageUtilization":0,"currentAverageValue":"1m"}}]'
+  creationTimestamp: "2020-02-10T05:42:43Z"
+  name: sample-deployment
+  namespace: default
+  resourceVersion: "658593"
+  selfLink: /apis/autoscaling/v1/namespaces/default/horizontalpodautoscalers/sample-deployment
+  uid: 28a90b15-4bc8-11ea-b951-02dbf11d83bf
+spec:
+  maxReplicas: 10
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: sample-deployment
+  targetCPUUtilizationPercentage: 90
+status:
+  currentCPUUtilizationPercentage: 0
+  currentReplicas: 2
+  desiredReplicas: 2
+  lastScaleTime: "2020-02-10T05:42:58Z"

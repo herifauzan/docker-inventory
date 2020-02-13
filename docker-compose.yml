@@ -14,10 +14,13 @@ spec:
         app: inventory
     spec:
       containers:
-      - name: inventory-container
+      - name: inventory
         image: herifauzan/simpleapp:latest
         ports:
         - containerPort: 8080
-      
-      
+        resources:
+          limits:
+            cpu: "1"
+          requests:
+            cpu: "0.5"
       
